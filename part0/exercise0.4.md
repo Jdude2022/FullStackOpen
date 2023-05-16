@@ -1,4 +1,5 @@
-sequenceDiagram
+'''mermaid
+sequenceDiagram 
     participant browser
     participant server
 
@@ -29,3 +30,4 @@ sequenceDiagram
     activate server
     server-->>browser: Corse stats link?
     deactivate server
+'''
