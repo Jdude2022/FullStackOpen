@@ -1,5 +1,5 @@
-'''mermaid
-sequenceDiagram 
+```mermaid
+sequenceDiagram
     participant browser
     participant server
 
@@ -19,6 +19,8 @@ sequenceDiagram
     activate server
     server-->>browser: Javascript File
     deactivate server
+    
+    # JavaScript Exicutes from Browser
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
@@ -28,6 +30,6 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/favicon.ico
     activate server
-    server-->>browser: Corse stats link?
+    server-->>browser: course stats link?
     deactivate server
-'''
+```
