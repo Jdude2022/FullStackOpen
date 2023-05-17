@@ -1,0 +1,1 @@
+sequenceDiagram    participant browser    participant server    browser->>server: Post https://studies.cs.helsinki.fi/exampleapp/new_note_spa    activate server    server: updates    deactivate server```

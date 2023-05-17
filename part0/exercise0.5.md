@@ -1,0 +1,29 @@
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: Get https://studies.cs.helsinki.fi/exampleapp/spa
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate server
+    server-->>browser: CSS style
+    server-->>browser: Javascript File
+    deactivate server
+    
+    # JavaScript Exicutes from Browser
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: JSON File
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/favicon.ico
+    activate server
+    server-->>browser: course stats link?
+    deactivate server
+```
