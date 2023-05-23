@@ -5,4 +5,4 @@ Each X is ~30m
 Part A: X X X X Intro to React 4
 Part B: X X X X Javascript
 Sup material: X
-Part C:
+Part C: X
