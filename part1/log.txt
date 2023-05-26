@@ -6,4 +6,4 @@ Part A: X X X X Intro to React 4
 Part B: X X X X Javascript
 Sup material: X
 Part C: X X X 
-Part D: X 
+Part D: X X X
