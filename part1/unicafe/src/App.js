@@ -6,6 +6,12 @@ const Button = (props) => (
   </button>
 )
 
+const StatisticsLine = (props) => {
+  return (
+      <p> {props.text}, {props.value}</p>
+  )
+}
+
 const Statistics = (props) => {
 
   const calcAverage = (good, neutral, bad) => {
@@ -17,21 +23,31 @@ const Statistics = (props) => {
   const calcPos = (good, neutral, bad) => {
     const total = good + bad + neutral
     return(
-      good / total
+      (good / total) * 100 + " %"
     )
   }
-
+  if ((props.good > 0) || (props.neutral > 0) || (props.bad > 0)){
   return (
     <div>
-    <h2>statistics</h2>
-          <p> good {props.good}<br></br>
-          neutral {props.neutral}<br></br>
-          bad {props.bad}<br></br>
-          all {props.good + props.neutral + props.bad}<br></br>
-          average {calcAverage(props.good, props.neutral, props.bad)}<br></br>
-          positive {calcPos(props.good, props.neutral, props.bad)} %</p>
+      <StatisticsLine text="Good" value={props.good} />
+      <StatisticsLine text="Neutral" value={props.neutral} />
+      <StatisticsLine text="Bad" value={props.bad} />
+      <StatisticsLine text="All" value={props.good + props.neutral + props.bad} />
+      <StatisticsLine text="Average" value={calcAverage(props.good,
+                                                        props.neutral,
+                                                        props.bad)} />
+      <StatisticsLine text="Positive" value={calcPos(props.good,
+                                                     props.neutral,
+                                                     props.bad)} />
     </div> 
     )
+  }
+  // if all props 0
+  return (
+    <div>
+      <p> No feedback given</p>
+    </div>
+  )
 }
 
 const App = () => {
