@@ -25,11 +25,15 @@ const App = () => {
 
   console.log(vote_array)
   const vote = () => {
+    // https://www.react.express/hooks/usestate 
    let vote_copy = [...vote_array]
     vote_copy[selected] += 1
     setVoteArray(vote_copy)
   }
 
+  const highest_vote = () => {
+    return vote_array.indexOf(Math.max(...vote_array))
+  }
   const cal_rand_num = () => {
     let random_num = Math.floor(Math.random() * anecdotes.length);
     return random_num
@@ -41,10 +45,16 @@ const App = () => {
 
   return (
     <div>
+      <h1>Anecdote of the day!</h1>
       <p>{anecdotes[selected]}</p>
+      <p>has {vote_array[selected]} votes</p>
       <Button handleclick={() => setSelectedValue(cal_rand_num())}
                                  text= "next anecdote" />
       <Button handleclick={() => vote()} text= "vote"> </Button>
+      <h1>Anecdote with most votes</h1>
+      <p>{anecdotes[highest_vote()]}</p>
+      <p> has {vote_array[highest_vote()]} votes</p>
+
     </div>
   )
 }
