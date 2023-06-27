@@ -21,8 +21,6 @@ const App = () => {
   ]
 
   // As long as new anecdotes are not added during program use should work.
-  const arr_len = anecdotes.length
-  let vote_arr = Array(arr_len).fill(0)
   const [selected, setSelected] = useState(0)
 
   const cal_rand_num = () => {
@@ -34,18 +32,12 @@ const App = () => {
     setSelected(newValue)
  }
 
-  const vote = () => {
-    let arr_copy = [...vote_arr]
-    arr_copy[selected] += 1
-    vote_arr = arr_copy
-    console.log(vote_arr)
-  }
-
   return (
     <div>
       <p>{anecdotes[selected]}</p>
-      <Button handleclick={() => setSelectedValue(cal_rand_num())} text= "next anecdote" />
-      <Button handleclick={() => vote()} text= "vote"> </Button>
+      <Button handleclick={() => setSelectedValue(cal_rand_num())}
+                                 text= "next anecdote" />
+      {/* <Button handleclick={() => vote()} text= "vote"> </Button> */}
     </div>
   )
 }
