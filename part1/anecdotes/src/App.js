@@ -20,8 +20,15 @@ const App = () => {
     'The only way to go fast, is to go well.'
   ]
 
-  // As long as new anecdotes are not added during program use should work.
   const [selected, setSelected] = useState(0)
+  let [vote_array, setVoteArray] = useState(new Uint8Array(anecdotes.length))
+
+  console.log(vote_array)
+  const vote = () => {
+   let vote_copy = [...vote_array]
+    vote_copy[selected] += 1
+    setVoteArray(vote_copy)
+  }
 
   const cal_rand_num = () => {
     let random_num = Math.floor(Math.random() * anecdotes.length);
@@ -37,7 +44,7 @@ const App = () => {
       <p>{anecdotes[selected]}</p>
       <Button handleclick={() => setSelectedValue(cal_rand_num())}
                                  text= "next anecdote" />
-      {/* <Button handleclick={() => vote()} text= "vote"> </Button> */}
+      <Button handleclick={() => vote()} text= "vote"> </Button>
     </div>
   )
 }
