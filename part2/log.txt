@@ -1,4 +1,4 @@
 Each x is ~ 30 min
 
 Part a: X X X X && (Functional programming in JS videos)
-Part a ex: X 
+Part a ex: X X V 
