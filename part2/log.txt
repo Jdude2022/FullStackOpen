@@ -1,4 +1,5 @@
-Each x is ~ 30 min
+Each x is ~ 30 min, V ~ 15 min
 
 Part a: X X X X && (Functional programming in JS videos)
-Part a ex: X X X X  
+Part a ex: X X X X X V
+Part b: 
